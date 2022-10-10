@@ -24,7 +24,7 @@ const Feature = ({ title, text, icon }) => {
 
 export default function IndexEvent() {
   return (
-    <Box p={4}>
+    <Box px={16} pb ={16}>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         <Feature
           icon={<Icon as={FcAssistant} w={10} h={10} />}

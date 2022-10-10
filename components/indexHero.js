@@ -48,6 +48,9 @@ export default function IndexHero() {
             alignSelf={'center'}
             position={'relative'}>
             <Button
+              onClick={() => {
+                window.location.href = '/register';
+              }}
               colorScheme={'green'}
               bg={'green.400'}
               rounded={'full'}
