@@ -29,7 +29,7 @@ export default async function paynow(req, res) {
       },
       userInfo: userInfo,
     };
-    console.log(paytmParams.body);
+    // console.log(paytmParams.body);
 
     PaytmChecksum.generateSignature(
       JSON.stringify(paytmParams.body),
@@ -40,7 +40,9 @@ export default async function paynow(req, res) {
       };
 
       var post_data = JSON.stringify(paytmParams);
-      console.log(post_data);
+    //   console.log(post_data);
+      console.log(PaytmConfig.PaytmConfig.mid);
+      console.log(orderId);
 
       var options = {
         /* for Staging */
@@ -68,7 +70,7 @@ export default async function paynow(req, res) {
           response = JSON.parse(response);
           console.log("txnToken:", response);
           
-          res.send(JSON.stringify({ mid: PaytmConfig.PaytmConfig.mid, orderId: orderId, token: response.body.txnToken }));
+        //   res.send(JSON.stringify({ mid: PaytmConfig.PaytmConfig.mid, orderId: orderId, token: response.body.txnToken }));
           
         });
       });
