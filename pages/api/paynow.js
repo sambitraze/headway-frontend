@@ -7,8 +7,8 @@ export default async function paynow(req, res) {
   if (req.method === "POST") {
     var reqBody=JSON.parse(req.body);
     var orderId = "RSGI" + Math.floor(Math.random(6) * 1000000);
-    var amount = req.body.amount;
-    var callbackUrl="http://localhost:3000/api/paymentCallback"
+    var amount = 10000;
+    var callbackUrl="https://headway2k22.netlify.app/api/paymentCallback"
     var userInfo = {
       custId: reqBody.custId, // CLIENT CUSTOMER ID
       mobile: reqBody.mobile,
@@ -24,11 +24,12 @@ export default async function paynow(req, res) {
       orderId: orderId,
       callbackUrl: callbackUrl,
       txnAmount: {
-        value: amount,
+        value: "1.00",
         currency: "INR",
       },
       userInfo: userInfo,
     };
+    console.log(paytmParams.body);
 
     PaytmChecksum.generateSignature(
       JSON.stringify(paytmParams.body),
@@ -39,6 +40,7 @@ export default async function paynow(req, res) {
       };
 
       var post_data = JSON.stringify(paytmParams);
+      console.log(post_data);
 
       var options = {
         /* for Staging */
@@ -64,7 +66,7 @@ export default async function paynow(req, res) {
 
         post_res.on("end", function () {
           response = JSON.parse(response);
-        //   console.log("txnToken:", response);
+          console.log("txnToken:", response);
           
           res.send(JSON.stringify({ mid: PaytmConfig.PaytmConfig.mid, orderId: orderId, token: response.body.txnToken }));
           
