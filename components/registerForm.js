@@ -46,7 +46,7 @@ export default function RegisterForm() {
                 </Heading>
                 {formNumber === 0 ? <Box
                     rounded={'lg'}
-                    bg={useColorModeValue('white', 'gray.700')}
+                    bg={'gray.700'}
                     boxShadow={'lg'}
                     p={8}>
                     <Stack spacing={4}>
@@ -138,7 +138,7 @@ export default function RegisterForm() {
                     </Stack>
                 </Box> : formNumber === 1 ? <Box
                     rounded={'lg'}
-                    bg={useColorModeValue('white', 'gray.700')}
+                    bg={'gray.700'}
                     boxShadow={'lg'}
                     p={8}>
                     <Stack spacing={4}>
@@ -186,13 +186,13 @@ export default function RegisterForm() {
                     </Stack>
                 </Box> : formNumber === 2 ? <Box
                     rounded={'lg'}
-                    bg={useColorModeValue('white', 'gray.700')}
+                    bg={'gray.700'}
                     boxShadow={'lg'}
                     p={8}>
                     <RegisterPayment />
                 </Box> : <Box
                     rounded={'lg'}
-                    bg={useColorModeValue('white', 'gray.700')}
+                    bg={'gray.700'}
                     boxShadow={'lg'}
                     p={8}>
                     <Stack spacing={4}>
