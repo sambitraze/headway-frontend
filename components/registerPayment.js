@@ -26,7 +26,7 @@ export default function RegisterPayment() {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
+                console.log("data-------",data);
                 setToken(data.token);
                 setMid(data.mid);
                 setOrderId(data.orderId);
@@ -114,16 +114,19 @@ const Hiddenfrom = (props) => {
                 id="redFrom"
                 method="post"
                 action={
-                    "https://securegw-stage.paytm.in/theia/api/v1/showPaymentPage?mid=" +
-                    props.mid +
-                    "&orderId=" +
-                    props.orderId
+                    "https://securegw-stage.paytm.in/theia/api/v1/showPaymentPage?mid=" + "yneBSz74822898222231" + "&orderId=" + "RSGI133013"
+                    // props.mid +
+                    // "&orderId=" +
+                    // props.orderId
                 }
                 name="paytm"
             >
-                <input type="hidden" name="mid" value={props.mid} />
+                {/* <input type="hidden" name="mid" value={props.mid} />
                 <input type="hidden" name="orderId" value={props.orderId} />
-                <input type="hidden" name="txnToken" value={props.token} />
+                <input type="hidden" name="txnToken" value={props.token} /> */}
+                <input type="hidden" name="mid" value={"yneBSz74822898222231"} />
+                <input type="hidden" name="orderId" value={"RSGI855248"} />
+                <input type="hidden" name="txnToken" value={"hHqn6f/6bmGswACvPNWPJaIUzqnH+GXy0KhZ7F3D5y4fe1qorAjdX784uec74u596TvOEPgiKBOJzQP9aMHgiNCeS0/Id19pOhEx2syTO18="} />
             </form>
         </div>
     );

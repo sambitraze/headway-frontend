@@ -5,10 +5,11 @@ import PaytmChecksum from "../../components/Paytm/Checksum.js";
 export default async function paynow(req, res) {
 
   if (req.method === "POST") {
-    var reqBody=JSON.parse(req.body);
+    console.log("flag0");
+    var reqBody = JSON.parse(req.body);
     var orderId = "RSGI" + Math.floor(Math.random(6) * 1000000);
     var amount = 10000;
-    var callbackUrl="https://headway2k22.netlify.app/api/paymentCallback"
+    var callbackUrl = "http://localhost:3000/api/paymentCallback"
     var userInfo = {
       custId: reqBody.custId, // CLIENT CUSTOMER ID
       mobile: reqBody.mobile,
@@ -40,7 +41,7 @@ export default async function paynow(req, res) {
       };
 
       var post_data = JSON.stringify(paytmParams);
-    //   console.log(post_data);
+      //   console.log(post_data);
       console.log(PaytmConfig.PaytmConfig.mid);
       console.log(orderId);
 
@@ -62,24 +63,40 @@ export default async function paynow(req, res) {
 
       var response = "";
       var post_req = https.request(options, function (post_res) {
+        console.log("flag1")
         post_res.on("data", function (chunk) {
+
+          console.log("flag2")
           response += chunk;
         });
+        console.log("flag3")
 
         post_res.on("end", function () {
+          console.log("flag4")
           response = JSON.parse(response);
           console.log("txnToken:", response);
-          
-        //   res.send(JSON.stringify({ mid: PaytmConfig.PaytmConfig.mid, orderId: orderId, token: response.body.txnToken }));
-          
+
+          console.log("flag5")
+
+          res.send(JSON.stringify({ mid: PaytmConfig.PaytmConfig.mid, orderId: orderId, token: response.body.txnToken }));
+
+          console.log("flag6")
+
         });
       });
 
+      console.log("flag7");
       post_req.write(post_data);
+
+      console.log("flag8");
       post_req.end();
+
+      console.log("flag9")
     });
   } else {
+
+    console.log("flag10");
     res.send(req.body);
   }
- 
+
 }
