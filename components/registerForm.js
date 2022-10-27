@@ -17,7 +17,6 @@ import {
     StatNumber,
     StatHelpText,
     StatArrow,
-    StatGroup,
     useColorModeValue,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
@@ -25,14 +24,14 @@ import { useState, useEffect } from "react";
 export default function RegisterForm() {
     const [showWpPh, setShowWpPh] = useState(false);
     const [formNumber, setFormNumber] = useState(0);
-    const [fitName, setFitName] = useState("Sambit");
-    const [lastName, setLastName] = useState("Majhi");
-    const [email, setEmail] = useState("majhisambit2@gmail.com");
-    const [roll, setRoll] = useState("1906422");
-    const [branch, setBranch] = useState("IT");
-    const [year, setYear] = useState("4th");
-    const [whatsapp, setWhatsapp] = useState("+917751992236");
-    const [phone, setPhone] = useState("+917751992236");
+    const [fitName, setFitName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [roll, setRoll] = useState("");
+    const [branch, setBranch] = useState("");
+    const [year, setYear] = useState("");
+    const [whatsapp, setWhatsapp] = useState("");
+    const [phone, setPhone] = useState("");
     const [planType, setPlanType] = useState("1");
     const [foodOpted, setFoodOpted] = useState(false);
     const [totalFare, setTotalFare] = useState(99.00);
@@ -46,7 +45,7 @@ export default function RegisterForm() {
                 minH={"10vh"}
                 align={"center"}
                 justify={"center"}
-                bg={useColorModeValue("gray.50", "gray.800")}
+                bg={useColorModeValue("gray.800")}
             >
                 <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
                     <Stack align={"center"}>
@@ -60,7 +59,7 @@ export default function RegisterForm() {
                     <Progress
                         value={(formNumber + 1) * 25.00}
                         size="xs"
-                        colocheme="cyan"
+                        colocheme={"cyan"}
                     />
                     <Heading fontSize={"2xl"} textAlign={"left"}>
                         {formNumber === 0

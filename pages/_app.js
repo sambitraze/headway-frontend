@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 const SocialButton = ({
   children,
@@ -16,7 +17,7 @@ const SocialButton = ({
 }) => {
   return (
     <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      bg={useColorModeValue('blackAlpha.100')}
       rounded={'full'}
       w={8}
       h={8}
@@ -28,20 +29,25 @@ const SocialButton = ({
       justifyContent={'center'}
       transition={'background 0.3s ease'}
       _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+        bg: useColorModeValue('blackAlpha.200'),
       }}>
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
     </chakra.button>
   );
 };
+
+// 2. Add your color mode config
+const config = {
+  initialColorMode: 'dark',
+  useSystemColorMode: false,
+}
+const theme = extendTheme({ config })
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Component {...pageProps} />
-      <Box
-        bg={useColorModeValue('gray.900')}
-        color={useColorModeValue('gray.200')}>
+      <Box>
         <Container
           as={Stack}
           maxW={'6xl'}
