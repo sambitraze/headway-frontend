@@ -4,7 +4,6 @@ import IndexNav from '../components/indexnav';
 import IndexFooter from '../components/indexFooter';
 import IndexStats from '../components/IndexStat';
 import IndexPricing from '../components/indexPricing';
-import Script from 'next/script';
 export default function Home() {
   return (
     <div>
@@ -14,8 +13,7 @@ export default function Home() {
       <IndexEvent />
       <IndexStats />
       <IndexPricing />
-      <IndexFooter />
-      
+      <IndexFooter />      
     </div>
   )
 }

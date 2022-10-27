@@ -39,7 +39,7 @@ export default function IndexNav() {
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>Headway 2k22</Box>
+          <Box>INNOVANCE 2k22</Box>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>

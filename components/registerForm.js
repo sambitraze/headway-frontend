@@ -12,16 +12,20 @@ import {
     Button,
     Heading,
     Text,
+    Stat,
+    StatLabel,
+    StatNumber,
+    StatHelpText,
+    StatArrow,
+    StatGroup,
     useColorModeValue,
 } from "@chakra-ui/react";
-import Head from "next/head";
-import Script from "next/script";
 import { useState, useEffect } from "react";
 
 export default function RegisterForm() {
     const [showWpPh, setShowWpPh] = useState(false);
     const [formNumber, setFormNumber] = useState(0);
-    const [firstName, setFirstName] = useState("Sambit");
+    const [fitName, setFitName] = useState("Sambit");
     const [lastName, setLastName] = useState("Majhi");
     const [email, setEmail] = useState("majhisambit2@gmail.com");
     const [roll, setRoll] = useState("1906422");
@@ -31,62 +35,8 @@ export default function RegisterForm() {
     const [phone, setPhone] = useState("+917751992236");
     const [planType, setPlanType] = useState("1");
     const [foodOpted, setFoodOpted] = useState(false);
-    const [merchOpted, setMerchOpted] = useState(false);
-
-    const initiatePayment = async () => {
-        let amount = 100;
-        let oid = Math.floor(Math.random() * Date.now());
-        const data = {
-            amount,
-            oid,
-            email,
-        };
-        let initiatePaymentResponse = await fetch("/api/pretransaction", {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-        let txnTokenResponse = await initiatePaymentResponse.json();
-        txnTokenResponse = JSON.parse(txnTokenResponse);
-        console.log("flag1");
-        let defaultMerchantConfiguration = {
-            root: "",
-            flow: "DEFAULT",
-            data: {
-                orderId: oid,
-                token: txnTokenResponse.body.txnToken,
-                tokenType: "TXN_TOKEN",
-                amount: amount,
-                userDetail: {
-                    mobileNumber: phone,
-                    name: firstName + " " + lastName,
-                },
-            },
-            // labels: {},
-            // payMode: {
-            //     order : ['UPI'],
-            //     filter: {
-            //         "exclude": ['NB', 'EMI', 'CARD', 'PDC', 'PPBL', 'BALANCE']
-            //     }
-            // },
-            handler: {
-                notifyMerchant: function (eventName, data) {
-                    console.log("notifyMerchant handler function called");
-                    console.log("eventName => ", eventName);
-                    console.log("data => ", data);
-                },
-            },
-        };
-        window.Paytm.CheckoutJS.init(defaultMerchantConfiguration)
-            .then(function onSuccess() {
-                window.Paytm.CheckoutJS.invoke();
-            })
-            .catch(function onError(error) {
-                console.log("error => ", error);
-            });
-    };
+    const [totalFare, setTotalFare] = useState(99.00);
+    const [txnId, setTxnId] = useState("");
 
     useEffect(() => { }, []);
 
@@ -108,31 +58,31 @@ export default function RegisterForm() {
                         </Text>
                     </Stack>
                     <Progress
-                        value={(formNumber + 1) * 33.33}
+                        value={(formNumber + 1) * 25.00}
                         size="xs"
-                        colorScheme="cyan"
+                        colocheme="cyan"
                     />
                     <Heading fontSize={"2xl"} textAlign={"left"}>
                         {formNumber === 0
-                            ? "Personal Information"
+                            ? "Peonal Information"
                             : formNumber === 1
                                 ? "Plan Information"
                                 : formNumber === 2
-                                    ? "Payment"
-                                    : "Success"}
+                                    ? "Payment Info"
+                                    : ""}
                     </Heading>
                     {formNumber === 0 ? (
                         <Box rounded={"lg"} bg={"gray.700"} boxShadow={"lg"} p={8}>
                             <Stack spacing={4}>
                                 <HStack>
                                     <Box>
-                                        <FormControl id="firstName" isRequired>
-                                            <FormLabel>First Name</FormLabel>
+                                        <FormControl id="fitName" isRequired>
+                                            <FormLabel>Fit Name</FormLabel>
                                             <Input
                                                 type="text"
-                                                value={firstName}
+                                                value={fitName}
                                                 onChange={(e) => {
-                                                    setFirstName(e.target.value);
+                                                    setFitName(e.target.value);
                                                 }}
                                             />
                                         </FormControl>
@@ -151,7 +101,7 @@ export default function RegisterForm() {
                                     </Box>
                                 </HStack>
                                 <FormControl id="email" isRequired>
-                                    <FormLabel>Email address (Personal)</FormLabel>
+                                    <FormLabel>Email address (Peonal)</FormLabel>
                                     <Input
                                         type="email"
                                         value={email}
@@ -205,14 +155,17 @@ export default function RegisterForm() {
                                         <option value="CSSE">CSSE</option>
                                         <option value="CSCE">CSCE</option>
                                         <option value="ECE">ECE</option>
+                                        <option value="ECSE">ECSE</option>
                                         <option value="EEE">EEE</option>
                                         <option value="ME">ME</option>
                                         <option value="CE">CE</option>
                                         <option value="MME">MME</option>
                                         <option value="MCA">MCA</option>
                                         <option value="MBA">MBA</option>
+                                        <option value="BBA">BBA</option>
                                         <option value="MTECH">MTECH</option>
                                         <option value="PHD">PHD</option>
+                                        <option value="OTHER">OTHER</option>
                                     </Select>
                                 </FormControl>
 
@@ -299,45 +252,85 @@ export default function RegisterForm() {
                                         value={planType}
                                         onChange={(e) => {
                                             setPlanType(e.target.value);
+                                            if (!foodOpted) {
+                                                if (e.target.value === "1") {
+                                                    setTotalFare(99);
+                                                } else if (e.target.value === "2") {
+                                                    setTotalFare(248);
+                                                } else if (e.target.value === "3") {
+                                                    setTotalFare(448);
+                                                } else if (e.target.value === "4") {
+                                                    setTotalFare(549);
+                                                }
+                                            } else {
+                                                if (e.target.value === "1") {
+                                                    setTotalFare(99 + 499);
+                                                } else if (e.target.value === "2") {
+                                                    setTotalFare(248 + 499);
+                                                } else if (e.target.value === "3") {
+                                                    setTotalFare(899);
+                                                } else if (e.target.value === "4") {
+                                                    setTotalFare(999);
+                                                }
+                                            }
                                         }}
                                     >
-                                        <option value="1">Basic Entry (Rs 99)</option>
+                                        <option value="1">Basic Entry - ₹99 ( Opening & Closing Ceremony + Extra Events )</option>
                                         <option value="2">
-                                            Basic Entry + SubEvents + Extra Event (Rs 99 + 149){" "}
+                                            Basic Entry & Sub Events - ₹248
                                         </option>
                                         <option value="3">
-                                            Basic Entry + Main Event (Rs 99 + 399){" "}
+                                            Basic Entry & Main Event - ₹448
                                         </option>
                                         <option value="4">
-                                            Basic Entry + SubEvents + Extra Event + Main Event (Rs 99
-                                            + 149 + 399){" "}
+                                            Basic Entry & SubEvents & Main Event - ₹̷5̷9̷7̷   - ₹549
                                         </option>
                                     </Select>
                                 </FormControl>
                                 <FormControl id="branch" isRequired>
                                     <FormLabel>
-                                        Opting for Food Facility (Rs 599 for 3 days)
+                                        Opting for Food Facility ( ₹499 for 3 days)
                                     </FormLabel>
                                     <Switch
                                         id="foodOpted"
                                         isChecked={foodOpted}
                                         onChange={(e) => {
+                                            if (foodOpted) {
+                                                if (planType === "1") {
+                                                    setTotalFare(99);
+                                                } else if (planType === "2") {
+                                                    setTotalFare(248);
+                                                } else if (planType === "3") {
+                                                    setTotalFare(448);
+                                                } else if (planType === "4") {
+                                                    setTotalFare(549);
+                                                }
+                                            } else {
+                                                if (planType === "1") {
+                                                    setTotalFare(99 + 499);
+                                                } else if (planType === "2") {
+                                                    setTotalFare(248 + 499);
+                                                } else if (planType === "3") {
+                                                    setTotalFare(899);
+                                                } else if (planType === "4") {
+                                                    setTotalFare(999);
+                                                }
+                                            }
                                             setFoodOpted(!foodOpted);
                                         }}
                                     />
                                 </FormControl>
-                                <FormControl display="flex" alignItems="center">
-                                    <FormLabel htmlFor="email-alerts" mb="0">
-                                        Event Merch(Extra Rs 399) ?
-                                    </FormLabel>
-                                    <Switch
-                                        id="merchOpted"
-                                        isChecked={merchOpted}
-                                        onChange={(e) => {
-                                            setMerchOpted(!merchOpted);
-                                        }}
-                                    />
-                                </FormControl>
+                                <Stat>
+                                    <StatLabel>Total Fee</StatLabel>
+                                    <StatNumber>₹ {totalFare.toFixed(2)}</StatNumber>
+                                    {planType === "3" && foodOpted ? <StatHelpText>
+                                        <StatArrow type='decrease' />
+                                        5.12%
+                                    </StatHelpText> : planType === "4" && foodOpted ? <StatHelpText>
+                                        <StatArrow type='decrease' />
+                                        4.90%
+                                    </StatHelpText> : <></>}
+                                </Stat>
                                 <Stack spacing={10} pt={2}>
                                     <Button
                                         loadingText="Submitting"
@@ -345,8 +338,7 @@ export default function RegisterForm() {
                                         bg={"blue.400"}
                                         color={"white"}
                                         onClick={() => {
-                                            // setFormNumber(2);
-                                            initiatePayment();
+                                            setFormNumber(2);
                                         }}
                                         _hover={{
                                             bg: "blue.500",
@@ -358,9 +350,92 @@ export default function RegisterForm() {
                                 <Stack pt={6}></Stack>
                             </Stack>
                         </Box>
-                    ) : (
-                        <Box></Box>
-                    )}
+                    ) : formNumber === 2 ? (
+                        <Box rounded={"lg"} bg={"gray.700"} boxShadow={"lg"} p={8}>
+                            <Stack spacing={4}>
+                                <HStack>
+                                    <Text fontSize='xl' as="b"> Bank Account Name: </Text>
+                                    <Text fontSize='xl'> KIIT UNIVERSITY</Text>
+                                </HStack>
+                                <HStack>
+                                    <Text fontSize='xl' as="b"> Bank Name: </Text>
+                                    <Text fontSize='xl'> CANARA BANK</Text>
+                                </HStack>
+                                <HStack>
+                                    <Text fontSize='xl' as="b"> Account Number: </Text>
+                                    <Text fontSize='xl'> 4915101003256</Text>
+                                </HStack>
+                                <HStack>
+                                    <Text fontSize='xl' as="b"> Account type: </Text>
+                                    <Text fontSize='xl'> SAVING</Text>
+                                </HStack>
+                                <HStack>
+                                    <Text fontSize='xl' as="b"> Branch name: </Text>
+                                    <Text fontSize='xl'> KIIT CAMPUS BRANCH</Text>
+                                </HStack>
+                                <HStack>
+                                    <Text fontSize='xl' as="b"> IFSC Code: </Text>
+                                    <Text fontSize='xl'> CNRB0004915</Text>
+                                </HStack>
+                                <FormControl id="email" isRequired>
+                                    <FormLabel>Transaction ID</FormLabel>
+                                    <Input
+                                        type="text"
+                                        value={txnId}
+                                        onChange={(e) => {
+                                            setTxnId(e.target.value);
+                                        }}
+                                    />
+                                </FormControl>
+                                <Stack spacing={10} pt={2}>
+                                    <Button
+                                        loadingText="Submitting"
+                                        size="lg"
+                                        bg={"blue.400"}
+                                        color={"white"}
+                                        onClick={() => {
+                                            setFormNumber(3);
+                                        }}
+                                        _hover={{
+                                            bg: "blue.500",
+                                        }}
+                                    >
+                                        Procced
+                                    </Button>
+                                </Stack>
+                            </Stack>
+                        </Box>
+                    ) : formNumber === 3 ? (
+                        <Box rounded={"lg"} bg={"gray.700"} boxShadow={"lg"} p={8}>
+                            <Stack spacing={4}>
+                                <Stack align={"center"}>
+                                    <Heading fontSize={"4xl"} textAlign={"center"}>
+                                        Thank You for registering!
+                                    </Heading>
+                                    <br></br>
+                                    <Text fontSize={"lg"} textAlign={"center"}>
+                                        Confirmation Mail will be sent to you on your KIIT Email id soon.✌️
+                                    </Text>
+                                </Stack>
+                                <Button
+                                    loadingText="Submitting"
+                                    size="lg"
+                                    bg={"blue.400"}
+                                    color={"white"}
+                                    onClick={() => {
+                                        window.location.href = "https://iotkiit.in";
+                                    }}
+                                    _hover={{
+                                        bg: "blue.500",
+                                    }}
+                                >
+                                    Visit Home Page
+                                </Button>
+                            </Stack>
+                        </Box>
+                    ) : <Box rounded={"lg"} bg={"gray.700"} boxShadow={"lg"} p={8}>
+                        <Stack spacing={4}>Invalid Page</Stack>
+                    </Box>}
                 </Stack>
             </Flex>
         </div>
