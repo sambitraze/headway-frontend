@@ -33,7 +33,7 @@ const NavLink = ({ children }) => (
 );
 
 export default function IndexNav() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode('dark');
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -43,10 +43,6 @@ export default function IndexNav() {
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
-              <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
-
               {/* <Menu>
                 <MenuButton
                   as={Button}
