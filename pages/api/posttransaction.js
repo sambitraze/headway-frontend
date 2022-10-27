@@ -8,7 +8,7 @@ export default async function handler(req, res) {
 
     paytmParams.body = {
       mid: process.env.PAYTM_MID,
-      orderId: req.body.data.oid,
+      orderId: req.body.ORDERID,
     };
     const checksum = await PaytmChecksum.generateSignature(
       JSON.stringify(paytmParams.body),
@@ -24,10 +24,10 @@ export default async function handler(req, res) {
       return new Promise((resolve, reject) => {
         var options = {
           /* for Staging */
-          hostname: "securegw-stage.paytm.in",
+          // hostname: "securegw-stage.paytm.in",
 
           /* for Production */
-          // hostname: 'securegw.paytm.in',
+          hostname: 'securegw.paytm.in',
 
           port: 443,
           path: "/v3/order/status",

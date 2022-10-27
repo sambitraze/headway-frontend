@@ -15,7 +15,7 @@ export default function Home() {
       <IndexStats />
       <IndexPricing />
       <IndexFooter />
-      <Script src="https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/<Merchant-ID>.js" />
+      
     </div>
   )
 }

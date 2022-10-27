@@ -4,7 +4,9 @@ const PaytmChecksum = require("paytmchecksum");
 export default async function handler(req, res) {
   // console.log("req.body", req.body);
   if (req.method === "POST") {
-    var paytmParams = {};
+    var paytmParams = {
+      head: "WEB"
+    };
 
     paytmParams.body = {
       requestType: "Payment",
@@ -19,6 +21,7 @@ export default async function handler(req, res) {
       userInfo: {
         custId: req.body.email,
       },
+      // enablePaymentMode: [{ "mode": "PPBL" },{"mode":"UPI"},{"mode":"CREDIT_CARD"}, {"mode":"DEBIT_CARD"}],
     };
 
     const checksum = await PaytmChecksum.generateSignature(
@@ -35,10 +38,10 @@ export default async function handler(req, res) {
       return new Promise((resolve, reject) => {
         var options = {
           /* for Staging */
-          hostname: "securegw-stage.paytm.in",
+          // hostname: "securegw-stage.paytm.in",
 
           /* for Production */
-          // hostname: 'securegw.paytm.in',
+          hostname: 'securegw.paytm.in',
 
           port: 443,
           path: `/theia/api/v1/initiateTransaction?mid=${process.env.PAYTM_MID}&orderId=${req.body.oid}`,
