@@ -5,11 +5,17 @@ import Button from '@mui/material/Button';
 import Image from "next/image";
 import Logo from "../../public/images/logo.svg";
 import {Container, Hidden} from "@mui/material";
+import {useRouter} from "next/router";
+import {useCountdown} from "../useCountdown";
 
 
-const Navbar = ({mainRef, aboutRef, scheduleRef, planRef, sponsorRef, galleryRef, contactRef}) => {
+const Navbar = ({mainRef, aboutRef, scheduleRef, venueRef, planRef, sponsorRef, galleryRef, contactRef}) => {
     const [onTop, setOnTop] = useState(true);
     const navRef = useRef();
+    const Router = useRouter();
+
+    const [days, hours, minutes, seconds] = useCountdown("2022-11-4 18:30");
+
 
     useEffect(() => {
         const position = navRef.current.offsetTop;
@@ -35,6 +41,10 @@ const Navbar = ({mainRef, aboutRef, scheduleRef, planRef, sponsorRef, galleryRef
         {
             ref: scheduleRef,
             name: 'TIMELINE'
+        },
+        {
+            ref: venueRef,
+            name: 'VENUE'
         },
         {
             ref: planRef,
@@ -109,6 +119,10 @@ const Navbar = ({mainRef, aboutRef, scheduleRef, planRef, sponsorRef, galleryRef
                                             }}
                                             variant={'contained'}
                                             disableElevation
+                                            onClick={async () => {
+                                                await Router.push('/register')
+                                            }}
+                                            disabled={days + hours + minutes + seconds <= 0}
                                         >
                                             Register
                                         </Button>

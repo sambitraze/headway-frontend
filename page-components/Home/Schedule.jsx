@@ -12,7 +12,7 @@ export default function Index({scheduleRef}) {
 
     return (
         <>
-            <Box width={'100%'} bgcolor={'#F5F5F5'} py={10} ref={scheduleRef}>
+            <Box width={'100%'} bgcolor={'#F5F5F5'} pt={10} pb={6} ref={scheduleRef}>
                 <Container maxWidth={'lg'}>
                     <Box width={'100%'} display={'flex'} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} mt={4}>
                         <Title first={'The Event'} second={'Schedule'} />

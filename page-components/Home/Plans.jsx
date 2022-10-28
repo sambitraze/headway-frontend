@@ -3,14 +3,17 @@ import Title from "../../page-components/Home/Title";
 import {Button, Container, Grid} from "@mui/material";
 import DoneIcon from '@mui/icons-material/Done';
 import {planData} from "./planData";
+import {useRouter} from "next/router";
 
 export default function Index({planRef}) {
+
+    const Router = useRouter();
 
     return (
         <>
             <Box width={'100%'} py={10} ref={planRef}>
                 <Container maxWidth={'lg'}>
-                    <Box width={'100%'} display={'flex'} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} mt={4}>
+                    <Box width={'100%'} display={'flex'} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} mt={4} mb={4}>
                         <Title first={'The Event'} second={'Pricing'} />
                         <Box mt={{md: 8, xs: 2}} />
                         <Grid container spacing={5} direction={"row"} justifyContent="center" alignItems="center" px={{md: 0, xs: 5}}>
@@ -66,6 +69,9 @@ export default function Index({planRef}) {
                                                     py: 1,
                                                     px: 4,
                                                     // fontSize: {md: '20px', xs: '16px'},
+                                                }}
+                                                onClick={async () => {
+                                                    await Router.push('/register')
                                                 }}
                                             >
                                                 Buy Now

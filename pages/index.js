@@ -8,6 +8,7 @@ import Plans from "../page-components/Home/Plans";
 import Sponsors from "../page-components/Home/Sponsors";
 import Gallery from "../page-components/Home/Gallery";
 import Contact from "../page-components/Home/Contact";
+import Venue from "../page-components/Home/Venue";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import {useRef} from 'react';
 
@@ -16,6 +17,7 @@ export default function Index() {
     const mainRef = useRef(null);
     const aboutRef = useRef(null);
     const scheduleRef = useRef(null);
+    const venueRef = useRef(null);
     const planRef = useRef(null);
     const sponsorRef = useRef(null);
     const galleryRef = useRef(null);
@@ -42,14 +44,16 @@ export default function Index() {
                         mainRef={mainRef}
                         aboutRef={aboutRef}
                         scheduleRef={scheduleRef}
+                        venueRef={venueRef}
                         planRef={planRef}
                         sponsorRef={sponsorRef}
                         galleryRef={galleryRef}
                         contactRef={contactRef}
                     />
-                    <Main mainRef={mainRef} />
+                    <Main mainRef={mainRef} scheduleRef={scheduleRef} />
                     <About aboutRef={aboutRef} />
                     <Schedule scheduleRef={scheduleRef} />
+                    <Venue venueRef={venueRef} />
                     <Plans planRef={planRef} />
                     <Sponsors sponsorRef={sponsorRef} />
                     <Gallery galleryRef={galleryRef} />

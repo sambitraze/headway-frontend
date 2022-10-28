@@ -10,7 +10,7 @@ export default function Index({sponsorRef}) {
         <>
             <Box width={'100%'} py={10} bgcolor={'#F5F5F5'} ref={sponsorRef}>
                 <Container maxWidth={'lg'}>
-                    <Box width={'100%'} display={'flex'} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} mt={4}>
+                    <Box width={'100%'} display={'flex'} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} mt={4} mb={4}>
                         <Title first={'The Event'} second={'Sponsors'} />
                         <Box textAlign={'center'} color={'#616161'}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, minima!
