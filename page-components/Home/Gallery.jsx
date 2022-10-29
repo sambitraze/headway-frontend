@@ -17,9 +17,9 @@ export default function Index({galleryRef}) {
                     <Box mt={8} />
                     <Grid container>
                         {
-                            [1, 2, 3, 4, 5].map((each) => (
-                                <Grid key={each} item md={2.4} xs={12}>
-                                    <img src={`/backgrounds/dashboardBg${each}.jpg`} alt={'img'} width={'100%'} style={{height: '200px'}}/>
+                            [1, 2, 3, 4, 5, 6].map((each) => (
+                                <Grid key={each} item md={4} xs={12}>
+                                    <img src={`/images/img${each}.jpg`} alt={'img'} width={'100%'} style={{height: '260px'}}/>
                                 </Grid>
                             ))
                         }

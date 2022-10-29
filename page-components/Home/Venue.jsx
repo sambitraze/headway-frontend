@@ -43,7 +43,7 @@ export default function Index({venueRef}) {
                             </Box>
                             <Box display={'flex'} justifyContent={'center'} alignItems={'center'} width={'100%'} mt={10}>
                                 {
-                                    ['Campus 7', 'Campus 15'].map((each, index) => (
+                                    ['Campus 15', 'Campus 17'].map((each, index) => (
                                         <Button
                                             sx={{
                                                 ml: index ? 4 : 0,
@@ -60,7 +60,7 @@ export default function Index({venueRef}) {
                                                 },
                                             }}
                                             onClick={async () => {
-                                                window.open(index ? 'https://maps.app.goo.gl/H3NECFxgJbkM3Uj77?g_st=ic' : ' https://maps.app.goo.gl/esR6zo9FqW9w14g2A?g_st=ic', 'blank')
+                                                window.open(index ? 'https://goo.gl/maps/Szg68CUGrzvrLKED7' : 'https://maps.app.goo.gl/H3NECFxgJbkM3Uj77?g_st=ic', 'blank')
                                             }}
                                             variant={'outlined'}
                                             color={'white'}

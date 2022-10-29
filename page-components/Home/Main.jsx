@@ -30,7 +30,7 @@ export default function Index({mainRef, scheduleRef}) {
                 <Container maxWidth={'lg'}>
                     <Box textAlign={'center'} width={'100%'} >
                         <Box lineHeight={0.6} position={'relative'}>
-                            <Box letterSpacing={'8px'} fontWeight={900} fontSize={{md: '130px', xs: '50px'}} sx={{color: 'rgba(255, 255, 255, 0.2)'}}>
+                            <Box letterSpacing={'8px'} fontWeight={900} fontSize={{md: '130px', xs: '45px'}} sx={{color: 'rgba(255, 255, 255, 0.22)'}}>
                                 INNOVANCE
                             </Box>
                             <Box fontWeight={900} fontSize={{md: '90px', xs: '50px'}} color={'#FFF'} position={'absolute'} top={13} width={'100%'} textAlign={'center'} letterSpacing={'2.5px'} zIndex={1}>
@@ -38,7 +38,7 @@ export default function Index({mainRef, scheduleRef}) {
                             </Box>
                         </Box>
                         <Box color={'#FFF'} mt={5} fontWeight={500} fontSize={{md: '20px', xs: '16px'}}>
-                            CAMPUS 7 & CAMPUS 15
+                            CAMPUS 15 & CAMPUS 17
                         </Box>
                     </Box>
                     <Box width={'100%'} display={'flex'} justifyContent={'center'} mt={8}>
@@ -80,45 +80,59 @@ export default function Index({mainRef, scheduleRef}) {
                             )
                         }
                     </Box>
-                    {
-                        days + hours + minutes + seconds > 0 ? (
-                            <Box display={'flex'} justifyContent={'center'} alignItems={'center'} width={'100%'} mt={5}>
-                                {
-                                    ['Details', 'Register'].map((each, index) => (
-                                        <Button
-                                            sx={{
-                                                ml: index ? 4 : 0,
-                                                borderRadius: '30px',
-                                                textTransform: 'none',
-                                                py: 0.3,
-                                                px: 4,
-                                                fontSize: {md: '20px', xs: '16px'},
-                                                border: '1.5px solid #FFF',
-                                                "&:hover": {
-                                                    // background: "#4763B7",
-                                                    // border: '1.5px solid #4763B7'
-                                                    border: '1.5px solid #FFF'
-                                                },
-                                            }}
-                                            variant={'outlined'}
-                                            color={'white'}
-                                            disableElevation
-                                            key={index}
-                                            onClick={async () => {
-                                                if(index)
-                                                    await Router.push('/register')
-                                                else scheduleRef.current?.scrollIntoView({behavior: 'smooth'});
-                                            }}
-                                        >
-                                            {each}
-                                        </Button>
-                                    ))
-                                }
-                            </Box>
-                        ) : (
-                            <Box mt={5} />
-                        )
-                    }
+                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} width={'100%'} mt={5}>
+                        <Button
+                            sx={{
+                                borderRadius: '30px',
+                                textTransform: 'none',
+                                py: 0.3,
+                                px: 4,
+                                fontSize: {md: '20px', xs: '16px'},
+                                border: '1.5px solid #FFF',
+                                "&:hover": {
+                                    // background: "#4763B7",
+                                    // border: '1.5px solid #4763B7'
+                                    border: '1.5px solid #FFF'
+                                },
+                            }}
+                            variant={'outlined'}
+                            color={'white'}
+                            disableElevation
+                            onClick={async () => {
+                                scheduleRef.current?.scrollIntoView({behavior: 'smooth'});
+                            }}
+                        >
+                            Details
+                        </Button>
+                        {
+                            days + hours + minutes + seconds > 0 && (
+                                <Button
+                                    sx={{
+                                        ml: 4,
+                                        borderRadius: '30px',
+                                        textTransform: 'none',
+                                        py: 0.3,
+                                        px: 4,
+                                        fontSize: {md: '20px', xs: '16px'},
+                                        border: '1.5px solid #FFF',
+                                        "&:hover": {
+                                            // background: "#4763B7",
+                                            // border: '1.5px solid #4763B7'
+                                            border: '1.5px solid #FFF'
+                                        },
+                                    }}
+                                    variant={'outlined'}
+                                    color={'white'}
+                                    disableElevation
+                                    onClick={async () => {
+                                        await Router.push('/register')
+                                    }}
+                                >
+                                    Register
+                                </Button>
+                            )
+                        }
+                    </Box>
 
                 </Container>
             </Box>
