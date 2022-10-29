@@ -52,7 +52,7 @@ export default function RegisterForm() {
                         <Heading fontSize={"4xl"} textAlign={"center"}>
                             Register
                         </Heading>
-                        <Text fontSize={"lg"} color={"gray.600"}>
+                        <Text fontSize={"lg"} color={"gray.00"}>
                             to enjoy all of our cool events ✌️
                         </Text>
                     </Stack>
@@ -76,7 +76,7 @@ export default function RegisterForm() {
                                 <HStack>
                                     <Box>
                                         <FormControl id="fitName" isRequired>
-                                            <FormLabel>Fit Name</FormLabel>
+                                            <FormLabel>First Name</FormLabel>
                                             <Input
                                                 type="text"
                                                 value={fitName}
@@ -100,7 +100,7 @@ export default function RegisterForm() {
                                     </Box>
                                 </HStack>
                                 <FormControl id="email" isRequired>
-                                    <FormLabel>Email address (Peonal)</FormLabel>
+                                    <FormLabel>Email address (Personal)</FormLabel>
                                     <Input
                                         type="email"
                                         value={email}
@@ -112,7 +112,7 @@ export default function RegisterForm() {
                                 <HStack>
                                     <Box>
                                         <FormControl id="roll" isRequired>
-                                            <FormLabel>Roll</FormLabel>
+                                            <FormLabel>Roll No.</FormLabel>
                                             <Input
                                                 type="text"
                                                 value={roll}
