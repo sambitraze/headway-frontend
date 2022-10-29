@@ -15,11 +15,6 @@ export const scheduleData = [
     {
         schedule: [
             {
-                timing: 'November 5, 1:00pm - 6:00pm',
-                title: 'Main Event',
-                description: 'An interactive and informative session by loT Lab\'s seniors on how to build and deliver an entire project from scratch! Including Conceptualization, Execution, Implementation and Pitching!',
-            },
-            {
                 timing: 'November 5, 10:00am - 12:00pm',
                 title: 'Cyber: Kernal Panic',
                 description: 'An informative webinar on basics of Cyber Security and Penetration Testing. A short OnA.',
@@ -42,7 +37,12 @@ export const scheduleData = [
             {
                 timing: 'November 5, 12:15pm - 1:45pm',
                 title: 'Content: Buzzing Fiction\'s',
-                description: 'Fan of buzzers? End the day with a quick buzzing round on fictions and test your literacy skills! Team limit: 3 members',
+                description: 'A seminar on how to pick up content writing as a career, different tools and types of content. \n An interactive QnA followed by a quick buzzing round of fiction to test your literary skills!',
+            },
+            {
+                timing: 'November 5, 1:00pm - 6:00pm',
+                title: 'Main Event',
+                description: 'An interactive and informative session by loT Lab\'s seniors on how to build and deliver an entire project from scratch! Including Conceptualization, Execution, Implementation and Pitching!',
             },
             {
                 timing: 'November 5, 2:15pm - 4:15pm',
@@ -57,11 +57,12 @@ export const scheduleData = [
             {
                 timing: 'November 5, 4:30pm - 6:00pm',
                 title: 'loT: Ard-U-Know - Trivia',
-                description: 'A quiz round of loT-related questions with rewards for correct answers',
+                description: 'A quit round of loT-related questions with rewards for correct answers.',
             },
             {
                 timing: 'November 5, 6:00pm - 7:00pm',
                 title: 'Extra Events',
+                description: 'Fun bite sized events including e-sports and musical jam.',
             },
         ]
     },
@@ -80,12 +81,12 @@ export const scheduleData = [
             {
                 timing: 'November 6, 12:15pm - 1:45pm',
                 title: 'Content: Write It Out',
-                description: 'A competition on writing content of different types explained on day 1.',
+                description: 'A competition on writing content of different types explained on day 2.',
             },
             {
                 timing: 'November 6, 2:15pm - 4:15pm',
                 title: 'loT: Ard-U-Know - Hackathon',
-                description: 'Models from Day 1 will be evaluated. Team limit: 1-3 members',
+                description: 'Models from Day 2 will be evaluated. Team limit: 1-3 members',
             },
             {
                 timing: 'November 6, 2:15pm - 4:15pm',
@@ -94,7 +95,7 @@ export const scheduleData = [
             },
             {
                 timing: 'November 6, 4:30pm - 6:00pm',
-                title: 'Marketing: Selling game',
+                title: 'Marketing: Selling game: Hold your thoughts:',
                 description: 'A three round back and forth of pitching,trading nd marketing. Impress the panel and win!',
             },
             {
