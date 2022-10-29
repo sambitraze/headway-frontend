@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import Title from "../../page-components/Home/Title";
 import {Avatar, Container, Grid, Hidden, Stack} from "@mui/material";
 import {scheduleData} from "./scheduleData";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import {useState} from "react";
 
 
@@ -45,7 +46,8 @@ export default function Index({scheduleRef}) {
                                                 <Box mr={index % 2 === 0 ? 1.5 : 0} ml={index % 2 === 0 ? 0 : 1.5} fontWeight={500} fontSize={'15px'}>
                                                     {each.timing}
                                                 </Box>
-                                                <Avatar src={'https://source.unsplash.com/random'} sx={{ width: 30, height: 30 }} />
+                                                {/*<Avatar sx={{ width: 30, height: 30 }}>{index + 1}</Avatar>*/}
+                                                <CalendarMonthIcon color={'primary'} />
                                             </Box>
                                         </Hidden>
                                         <Hidden smUp>
