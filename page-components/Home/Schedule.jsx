@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import Title from "../../page-components/Home/Title";
 import {Avatar, Container, Grid, Hidden, Stack} from "@mui/material";
-import Divider from "@mui/material/Divider";
 import {scheduleData} from "./scheduleData";
 import {useState} from "react";
 
