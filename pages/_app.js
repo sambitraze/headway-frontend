@@ -58,13 +58,13 @@ function MyApp({ Component, pageProps }) {
           align={{ base: 'center', md: 'center' }}>
           <Text>© 2022 Innovance 2k22. All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={'#'}>
+            <SocialButton label={'Twitter'} href={'https://twitter.com/iotlabkiit'}>
               <FaTwitter />
             </SocialButton>
-            <SocialButton label={'YouTube'} href={'#'}>
+            <SocialButton label={'YouTube'} href={'https://iotkiit.in'}>
               <FaYoutube />
             </SocialButton>
-            <SocialButton label={'Instagram'} href={'#'}>
+            <SocialButton label={'Instagram'} href={'https://www.instagram.com/iot.lab.kiit/'}>
               <FaInstagram />
             </SocialButton>
           </Stack>
