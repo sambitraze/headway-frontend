@@ -9,7 +9,6 @@ import Sponsors from "../page-components/Home/Sponsors";
 import Gallery from "../page-components/Home/Gallery";
 import Contact from "../page-components/Home/Contact";
 import Venue from "../page-components/Home/Venue";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import {useRef} from 'react';
 
 export default function Index() {

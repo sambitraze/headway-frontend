@@ -3,7 +3,8 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Image from "next/image";
-import Logo from "../../public/images/innovance.svg";
+import LogoDark from "../../public/images/innovance-light.svg";
+import LogoLight from "../../public/images/innovance-dark.svg";
 import {Container, Hidden} from "@mui/material";
 import {useRouter} from "next/router";
 import {useCountdown} from "../useCountdown";
@@ -73,17 +74,19 @@ const Navbar = ({mainRef, aboutRef, scheduleRef, venueRef, planRef, sponsorRef, 
                 elevation={0}
                 position={onTop ? 'absolute' : 'fixed'}
             >
-                <Box width={'100%'} p={1} bgcolor={!onTop ? "#FFF" : ""} color={!onTop ? "#000" : "#FFF"} boxShadow={!onTop ? '0px 4px 32px rgba(0, 0, 0, 0.14)' : ''}>
+                <Box width={'100%'} px={1} bgcolor={!onTop ? "#FFF" : ""} color={!onTop ? "#000" : "#FFF"} boxShadow={!onTop ? '0px 4px 32px rgba(0, 0, 0, 0.14)' : ''}>
                     <Container maxWidth={'lg'}>
                         <Box display={'flex'} justifyContent={{md: 'space-between', xs: !onTop ? 'space-between' : 'center'}} alignItems={'center'}>
                             <Box
-                                noLinkStyle href="/" width={'120px'} height={'41px'}
+                                noLinkStyle href="/" width={{md: '80px', xs: onTop ? '140px' : '80px'}}
                                 sx={{cursor: 'pointer'}}
                                 onClick={() => {
                                     mainRef.current?.scrollIntoView({behavior: 'smooth'});
                                 }}
                             >
-                                <Image src={Logo} alt={'logo'} height={'130px'} />
+                                {
+                                    !onTop ? (<Image src={LogoDark} alt={'logo'} />) : (<Image src={LogoLight} alt={'logo'} />)
+                                }
                             </Box>
                             <Box display={'flex'} alignItems={'center'}>
                                 <Hidden smDown>
