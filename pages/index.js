@@ -58,26 +58,26 @@ export default function Index() {
                     <Sponsors sponsorRef={sponsorRef} />
                     <Gallery galleryRef={galleryRef} />
                     <Contact contactRef={contactRef} />
-                    <Box pb={6} pt={6} display={'flex'} alignItems={'center'} width={'100%'} justifyContent={'center'} color={'#909090'} fontSize={'18px'} fontWeight={500}>
-                        <Box mr={0.5}>
-                            Copyright ©2022 All rights reserved | Made with
-                        </Box>
-                        <FavoriteIcon />
-                        <Box ml={0.5}>by</Box>
-                        <Box ml={0.5}
-                             onClick={() => {
-                                 Router.push("/");
-                             }}
-                             sx={{
-                                 cursor: 'pointer',
-                                 textDecoration: 'underline',
-                                 '&:hover': {
-                                     color: '#4763B7',
-                                 },
-                             }}>
-                            IoT KIIT
-                        </Box>
-                    </Box>
+                    {/*<Box pb={6} pt={6} display={'flex'} alignItems={'center'} width={'100%'} justifyContent={'center'} color={'#909090'} fontSize={'18px'} fontWeight={500}>*/}
+                    {/*    <Box mr={0.5}>*/}
+                    {/*        Copyright ©2022 All rights reserved | Made with*/}
+                    {/*    </Box>*/}
+                    {/*    <FavoriteIcon />*/}
+                    {/*    <Box ml={0.5}>by</Box>*/}
+                    {/*    <Box ml={0.5}*/}
+                    {/*         onClick={() => {*/}
+                    {/*             Router.push("/");*/}
+                    {/*         }}*/}
+                    {/*         sx={{*/}
+                    {/*             cursor: 'pointer',*/}
+                    {/*             textDecoration: 'underline',*/}
+                    {/*             '&:hover': {*/}
+                    {/*                 color: '#4763B7',*/}
+                    {/*             },*/}
+                    {/*         }}>*/}
+                    {/*        IoT KIIT*/}
+                    {/*    </Box>*/}
+                    {/*</Box>*/}
                 </Box>
             </ThemeProvider>
         </>

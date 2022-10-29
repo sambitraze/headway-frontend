@@ -27,7 +27,7 @@ export const planData = [
     },
     {
         title: 'Meal Charges+',
-        price: '₹599',
+        price: '₹499',
         points: [
             '7 meals(Friday Snacks + Saturday & Sunday\'s Breakfast, Lunch and Evening Snacks)',
         ],

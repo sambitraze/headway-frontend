@@ -1,13 +1,13 @@
 import Box from "@mui/material/Box";
 import Title from "../../page-components/Home/Title";
 import {Button, Container, Grid} from "@mui/material";
-import {planData} from "./planData";
-import DoneIcon from "@mui/icons-material/Done";
 import EmailIcon from "@mui/icons-material/Email";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import {useRouter} from "next/router";
 
 export default function Index({contactRef}) {
+    const Router = useRouter();
 
     return (
         <>
@@ -29,7 +29,11 @@ export default function Index({contactRef}) {
                                             backgroundColor: {md: '#4763B7', xs: ''},
                                             color: {md: '#FFF', xs: ''},
                                         },
-                                    }}>
+                                    }}
+                                         onClick={async () => {
+                                             await Router.push('mailto:contact@test.com')
+                                         }}
+                                    >
                                         <EmailIcon sx={{ fontSize: 50 }} />
                                     </Box>
                                 </Box>
@@ -43,7 +47,11 @@ export default function Index({contactRef}) {
                                             backgroundColor: {md: '#4763B7', xs: ''},
                                             color: {md: '#FFF', xs: ''},
                                         },
-                                    }}>
+                                    }}
+                                         onClick={async () => {
+                                             await Router.push('https://twitter.com/iotlabkiit')
+                                         }}
+                                    >
                                         <TwitterIcon sx={{ fontSize: 50 }} />
                                     </Box>
                                 </Box>
@@ -57,7 +65,11 @@ export default function Index({contactRef}) {
                                             backgroundColor: {md: '#4763B7', xs: ''},
                                             color: {md: '#FFF', xs: ''},
                                         },
-                                    }}>
+                                    }}
+                                         onClick={async () => {
+                                             await Router.push('https://www.linkedin.com/company/iotlabkiit/mycompany/')
+                                         }}
+                                    >
                                         <LinkedInIcon sx={{ fontSize: 50 }} />
                                     </Box>
                                 </Box>

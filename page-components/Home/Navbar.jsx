@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Image from "next/image";
-import Logo from "../../public/images/logo.svg";
+import Logo from "../../public/images/innovance.svg";
 import {Container, Hidden} from "@mui/material";
 import {useRouter} from "next/router";
 import {useCountdown} from "../useCountdown";
@@ -32,7 +32,7 @@ const Navbar = ({mainRef, aboutRef, scheduleRef, venueRef, planRef, sponsorRef, 
     const list = [
         {
             ref: mainRef,
-            name: 'Home'
+            name: 'HOME'
         },
         {
             ref: aboutRef,
@@ -83,7 +83,7 @@ const Navbar = ({mainRef, aboutRef, scheduleRef, venueRef, planRef, sponsorRef, 
                                     mainRef.current?.scrollIntoView({behavior: 'smooth'});
                                 }}
                             >
-                                <Image src={Logo} alt={'logo'} />
+                                <Image src={Logo} alt={'logo'} height={'130px'} />
                             </Box>
                             <Box display={'flex'} alignItems={'center'}>
                                 <Hidden smDown>
