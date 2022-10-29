@@ -3,11 +3,24 @@ import Box from "@mui/material/Box";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Button from "@mui/material/Button";
 import {useRouter} from "next/router";
+import {useEffect, useState} from "react";
 
 
 export default function Index({venueRef}) {
 
-    const Router = useRouter();
+    const [img, setImg] = useState(true)
+    const [time, setTime] = useState(5);
+    useEffect(() => {
+        if (time > 0) {
+            setTimeout(function () {
+                setTime(time - 1);
+            }, 1000);
+        }
+        if (time === 0){
+            setImg(!img);
+            setTime(5)
+        }
+    }, [img, time]);
 
     return (
         <>
@@ -15,14 +28,14 @@ export default function Index({venueRef}) {
                 ref={venueRef}
                 width={'100%'}
                 sx={{
-                    background: `url('/backgrounds/dashboardBg9.jpg')`,
+                    background: img ? `url('/backgrounds/venue1.jpg')` : `url('/backgrounds/venue2.jpg')`,
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
-                    height: {xl: '600px', lg: '500px', xs: '500px'},
+                    height: {xl: '750px', lg: '630px', xs: '500px'},
                     backgroundColor: 'rgba(0, 0, 0, 0.7)'
                 }}
             >
-                <Box width={'100%'} sx={{backgroundColor: 'rgba(0, 0, 0, 0.7)'}} height={'100%'} display={'flex'} alignItems={'center'}>
+                <Box width={'100%'} sx={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}} height={'100%'} display={'flex'} alignItems={'center'}>
                     <Container maxWidth={'lg'}>
                         <Box width={'100%'} display={'flex'} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} mt={4}>
                             <Box color={'#FFF'} fontSize={{md: '47px', xs: '35px'}} width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
@@ -38,9 +51,8 @@ export default function Index({venueRef}) {
                                 <LocationOnIcon sx={{ml: 3, mr: 3}} />
                                 <Box borderBottom={'2px solid #c3c3c3'} height={'2px'} width={{md: '100px', xs: '130px'}} sx={{opacity: 0.5}}/>
                             </Box>
-                            <Box textAlign={'center'} color={'#bcbcbc'}>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, minima!
-                            </Box>
+                            <Box textAlign={'center'} color={'#bcbcbc'} maxWidth={'700px'}>
+                                Ahoy KIITians! Join us for Innovance in campus 15 and campus 17! Mark your calendars from 4th November to 6th November and be ready for unlimited fun!                            </Box>
                             <Box display={'flex'} justifyContent={'center'} alignItems={'center'} width={'100%'} mt={10}>
                                 {
                                     ['Campus 15', 'Campus 17'].map((each, index) => (

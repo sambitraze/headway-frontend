@@ -16,8 +16,7 @@ export default function Index({contactRef}) {
                     <Box width={'100%'} display={'flex'} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} mt={4}>
                         <Title first={'Contact'} second={'Us'} />
                         <Box textAlign={'center'} color={'#616161'}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, minima!
-                        </Box>
+                            You can follow us on Instagram, Twitter, LinkedIn, GitHub and Facebook. DL007, Block-A, Campus 15.                        </Box>
                         <Box mt={8} />
                         <Grid container>
                             <Grid item md={4} xs={4}>

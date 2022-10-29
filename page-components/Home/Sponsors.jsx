@@ -20,7 +20,6 @@ export default function Index({sponsorRef}) {
         'sp2.png',
         'sp3.png',
         'sp4.png',
-        'sp5.jpg',
         'sp6.jpg',
         'sp7.jpg',
         'sp8.jpg',
@@ -38,8 +37,7 @@ export default function Index({sponsorRef}) {
                     <Box width={'100%'} display={'flex'} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} mt={4}>
                         <Title first={'The Event'} second={'Sponsors'} />
                         <Box textAlign={'center'} color={'#616161'}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, minima!
-                        </Box>
+                            We are very grateful to our sponsors. Without their support and help, this event wouldn't have been possible. We heartily thank you all.                        </Box>
                         <Box mt={8} />
                         {/*<Grid container spacing={5} direction={"row"} justifyContent="center" alignItems="center" px={{md: 0, xs: 6}}>*/}
                         {/*    {*/}

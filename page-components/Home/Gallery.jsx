@@ -11,9 +11,8 @@ export default function Index({galleryRef}) {
             <Box width={'100%'} py={10} bgcolor={'#FFF'} ref={galleryRef}>
                 <Box width={'100%'} display={'flex'} justifyContent={'center'} flexDirection={'column'} alignItems={'center'} mt={4} mb={4}>
                     <Title first={'Media'} second={'Gallery'} />
-                    <Box textAlign={'center'} color={'#616161'}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, minima!
-                    </Box>
+                    <Box textAlign={'center'} color={'#616161'} maxWidth={'750px'}>
+                        While you eagerly wait for Innovance, you can check out our media gallery. Here, you will find our previous amazing events and workshops! You can see the people who worked hard for making all the events successful.                    </Box>
                     <Box mt={8} />
                     <Grid container>
                         {
