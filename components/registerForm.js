@@ -63,7 +63,7 @@ export default function RegisterForm() {
                     />
                     <Heading fontSize={"2xl"} textAlign={"left"}>
                         {formNumber === 0
-                            ? "Peonal Information"
+                            ? "Personal Information"
                             : formNumber === 1
                                 ? "Plan Information"
                                 : formNumber === 2
@@ -198,7 +198,7 @@ export default function RegisterForm() {
                                         </Box>{" "}
                                         <Box>
                                             <FormControl id="phone2" isRequired>
-                                                <FormLabel>Whatsapp Number</FormLabel>
+                                                <FormLabel>Whatsapp No.</FormLabel>
                                                 <Input
                                                     type="text"
                                                     value={whatsapp}

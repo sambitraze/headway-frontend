@@ -31,7 +31,7 @@ export default function Index({contactRef}) {
                                         },
                                     }}
                                          onClick={async () => {
-                                             await Router.push('mailto:contact@test.com')
+                                             await Router.push('mailto:iot.lab@kiit.ac.in')
                                          }}
                                     >
                                         <EmailIcon sx={{ fontSize: 50 }} />
