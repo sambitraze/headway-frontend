@@ -2,7 +2,8 @@ import {Container, Grid, Stack} from "@mui/material";
 import Box from "@mui/material/Box";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Button from "@mui/material/Button";
-import {useRouter} from "next/router";
+// import Venue1 from "../../public/backgrounds/venue1.JPG";
+// import Venue2 from "../../public/backgrounds/venue2.JPG";
 import {useEffect, useState} from "react";
 
 
@@ -28,7 +29,7 @@ export default function Index({venueRef}) {
                 ref={venueRef}
                 width={'100%'}
                 sx={{
-                    background: img ? `url('/backgrounds/venue1.jpg')` : `url('/backgrounds/venue2.jpg')`,
+                    background: img ? `url('https://i.imgur.com/TaBfY45.jpg')` : `url('https://i.imgur.com/bzY3nBD.jpg')`,
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
                     height: {xl: '750px', lg: '630px', xs: '500px'},
