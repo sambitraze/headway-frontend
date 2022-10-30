@@ -156,7 +156,7 @@ export default function RegisterForm2() {
       setEmailError(true);
       isField1Valid = true;
     }
-    if (roll.length < 7) {
+    if (roll.length < 6) {
       setRollError(true);
       isField1Valid = true;
     }
