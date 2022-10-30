@@ -9,7 +9,7 @@ export const scheduleData = [
             {
                 timing: 'November 4, 6:30pm - 7:45pm',
                 title: 'Career Conference',
-                type: 'Base Event',
+                type: 'Extra Event',
                 description: 'An interactive career guidance session which will include tips on resume building and linkedin.',
             },
         ]
