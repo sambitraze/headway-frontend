@@ -182,7 +182,7 @@ export default function RegisterForm() {
     }
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   return (
     <div>
@@ -210,10 +210,10 @@ export default function RegisterForm() {
             {formNumber === 0
               ? "Personal Information"
               : formNumber === 1
-              ? "Plan Information"
-              : formNumber === 2
-              ? "Payment Info"
-              : ""}
+                ? "Plan Information"
+                : formNumber === 2
+                  ? "Payment Info"
+                  : ""}
           </Heading>
           {formNumber === 0 ? (
             <Box rounded={"lg"} bg={"gray.700"} boxShadow={"lg"} p={8}>
@@ -296,7 +296,7 @@ export default function RegisterForm() {
                           setYear(e.target.value);
                         }}
                       >
-                        <option value="1">1ST</option>
+                        {/* <option value="1">1ST</option> */}
                         <option value="2">2ND</option>
                         <option value="3">3RD</option>
                         <option value="4">4TH</option>
@@ -602,7 +602,12 @@ export default function RegisterForm() {
                   Go to previous page
                 </Button>
               </Stack>
-              <Stack spacing={4} pt={10}>
+              <Stack pt={6}></Stack>
+              <Text fontSize="lg" as="u" color='tomato'>
+                Please do an RTGS or NIFT Transaction using below details.
+              </Text>
+              <Stack pt={6}></Stack>
+              <Stack spacing={4}>
                 <HStack>
                   <Text fontSize="xl" as="b">
                     {" "}
@@ -645,6 +650,9 @@ export default function RegisterForm() {
                   </Text>
                   <Text fontSize="xl"> CNRB0004915</Text>
                 </HStack>
+                <Stack pt={6}></Stack><Text as="em" color='tomato'>
+                  After the transaction please enter the transaction id below
+                </Text>
                 <FormControl id="email" isRequired isInvalid={txnIdError}>
                   <FormLabel>Transaction ID</FormLabel>
                   <Input
@@ -660,6 +668,12 @@ export default function RegisterForm() {
                     <FormErrorMessage>This is required.</FormErrorMessage>
                   )}
                 </FormControl>
+                <text>
+                  NB: If you want to pay offline or using any other method
+                  please visit any one of our remote registration booth or our LAB
+                  at DL007 campus 15 anytime between 11 am to 7 PM. For any
+                  querry you can reach out to us on iotlab@kiit.ac.in
+                </text>
                 <Stack spacing={10} pt={2}>
                   <Button
                     loadingText="Submitting"
