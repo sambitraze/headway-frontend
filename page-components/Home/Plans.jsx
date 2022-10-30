@@ -19,7 +19,7 @@ export default function Index({planRef}) {
                         <Grid container spacing={5} direction={"row"} justifyContent="center" alignItems="center" px={{md: 0, xs: 5}}>
                             {
                                 planData.map((each, index) => (
-                                    <Grid key={index} item md={3} xs={12} height={'100%'}>
+                                    <Grid key={index} item md={4} xs={12} height={'100%'}>
                                         <Box
                                             width={'100%'}
                                             display={'flex'}
@@ -68,10 +68,11 @@ export default function Index({planRef}) {
                                                     borderRadius: '10px',
                                                     py: 1,
                                                     px: 4,
+                                                    marginTop: 2
                                                     // fontSize: {md: '20px', xs: '16px'},
                                                 }}
                                                 onClick={async () => {
-                                                    await Router.push('/register')
+                                                    await Router.push('/registeacher')
                                                 }}
                                             >
                                                 Buy Now

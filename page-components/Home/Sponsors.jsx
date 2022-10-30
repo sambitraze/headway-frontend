@@ -18,15 +18,20 @@ export default function Index({sponsorRef}) {
     const images = [
         'sp1.png',
         'sp2.png',
-        'sp3.png',
-        'sp4.png',
-        'sp6.jpg',
+        's15.jpg',
+        's18.jpg',
         'sp7.jpg',
         'sp8.jpg',
         'sp9.jpg',
+        's16.jpg',
+        'sp3.png',
+        's19.jpeg',
+        'sp20.png',
         'sp10.png',
         'sp11.jpeg',
         'sp12.png',
+        'sp4.png',
+        'sp6.jpg',
         'sp14.jpeg',
     ]
 
