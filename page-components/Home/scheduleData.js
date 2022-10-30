@@ -18,13 +18,13 @@ export const scheduleData = [
         schedule: [
             {
                 timing: 'November 5, 10:00am - 12:00pm',
-                title: 'Cyber: Kernal Panic',
+                title: 'Cyber: Kernal Panic Day1',
                 type: 'Sub Event',
                 description: 'An informative webinar on basics of Cyber Security and Penetration Testing. A short OnA.',
             },
             {
                 timing: 'November 5, 10:00am - 12:00pm',
-                title: 'Marketing: Scavenger Hunt',
+                title: 'Marketing: The Hawk-Eye',
                 type: 'Sub Event',
                 description: 'Check your grasp on brands by engaging in a thrilling guessing game! Team Limit: 2-5 members',
             },
@@ -82,7 +82,7 @@ export const scheduleData = [
         schedule: [
             {
                 timing: 'November 6, 10:00am - 12:00pm',
-                title: 'Cyber: Kernal Panic',
+                title: 'Cyber: Kernal Panic Day2',
                 type: 'Sub Event',
                 description: 'A fun gamified contest of hacking into a system to find hidden items. A short OnA!',
             },
@@ -118,7 +118,7 @@ export const scheduleData = [
             },
             {
                 timing: 'November 6, 4:30pm - 6:00pm',
-                title: 'Marketing: Selling game',
+                title: 'Marketing: Hold Your Thoughts',
                 type: 'Sub Event',
                 description: 'A three round back and forth of pitching,trading nd marketing. Impress the panel and win!',
             },
