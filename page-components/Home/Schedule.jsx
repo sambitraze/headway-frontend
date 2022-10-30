@@ -4,6 +4,7 @@ import {Avatar, Container, Grid, Hidden, Stack} from "@mui/material";
 import {scheduleData} from "./scheduleData";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import {useState} from "react";
+import Chip from '@mui/material/Chip';
 
 
 export default function Index({scheduleRef}) {
@@ -73,6 +74,8 @@ export default function Index({scheduleRef}) {
                                                         </Box>
                                                     )
                                                 }
+                                                <Box p={2}></Box>
+                                                <Chip label={each.type} variant="outlined" />
                                             </Box>
                                         </Box>
                                     </Grid>

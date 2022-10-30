@@ -29,7 +29,7 @@ import {
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
-export default function RegisterForm() {
+export default function RegisterForm2() {
   const [showWpPh, setShowWpPh] = useState(false);
   const [formNumber, setFormNumber] = useState(0);
   const [firstName, setFirstName] = useState("");
@@ -97,7 +97,7 @@ export default function RegisterForm() {
         last_name: lastName,
         email_personal: email,
         id: roll,
-        type: "online",
+        type: "offline",
         branch: branch,
         year: year,
         wp_number: whatsapp,
@@ -196,7 +196,7 @@ export default function RegisterForm() {
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Stack align={"center"}>
             <Heading fontSize={"4xl"} textAlign={"center"}>
-              Register
+              Register Internal
             </Heading>
             <Text fontSize={"lg"} color={"gray.00"}>
               to enjoy all of our cool events ✌️
@@ -535,19 +535,6 @@ export default function RegisterForm() {
                 <Stat>
                   <StatLabel>Total Fee</StatLabel>
                   <StatNumber>₹ {totalFare.toFixed(2)}</StatNumber>
-                  {planType === "3" && foodOpted ? (
-                    <StatHelpText>
-                      <StatArrow type="decrease" />
-                      5.12%
-                    </StatHelpText>
-                  ) : planType === "4" && foodOpted ? (
-                    <StatHelpText>
-                      <StatArrow type="decrease" />
-                      4.90%
-                    </StatHelpText>
-                  ) : (
-                    <></>
-                  )}
                 </Stat>
                 <Stack spacing={10} pt={2}>
                   <Button
@@ -603,53 +590,8 @@ export default function RegisterForm() {
                 </Button>
               </Stack>
               <Stack pt={6}></Stack>
-              <Text fontSize="lg" as="u" color='tomato'>
-                Please do an RTGS or NIFT Transaction using below details.
-              </Text>
-              <Stack pt={6}></Stack>
               <Stack spacing={4}>
-                <HStack>
-                  <Text fontSize="xl" as="b">
-                    {" "}
-                    Bank Account Name:{" "}
-                  </Text>
-                  <Text fontSize="xl"> KIIT UNIVERSITY</Text>
-                </HStack>
-                <HStack>
-                  <Text fontSize="xl" as="b">
-                    {" "}
-                    Bank Name:{" "}
-                  </Text>
-                  <Text fontSize="xl"> CANARA BANK</Text>
-                </HStack>
-                <HStack>
-                  <Text fontSize="xl" as="b">
-                    {" "}
-                    Account Number:{" "}
-                  </Text>
-                  <Text fontSize="xl"> 4915101003256</Text>
-                </HStack>
-                <HStack>
-                  <Text fontSize="xl" as="b">
-                    {" "}
-                    Account type:{" "}
-                  </Text>
-                  <Text fontSize="xl"> SAVING</Text>
-                </HStack>
-                <HStack>
-                  <Text fontSize="xl" as="b">
-                    {" "}
-                    Branch name:{" "}
-                  </Text>
-                  <Text fontSize="xl"> KIIT CAMPUS BRANCH</Text>
-                </HStack>
-                <HStack>
-                  <Text fontSize="xl" as="b">
-                    {" "}
-                    IFSC Code:{" "}
-                  </Text>
-                  <Text fontSize="xl"> CNRB0004915</Text>
-                </HStack>
+                <img src={`/images/qr.jpg`} alt={'img'} width={'100%'} />
                 <Stack pt={6}></Stack><Text as="em" color='tomato'>
                   After the transaction please enter the transaction id below
                 </Text>
@@ -668,12 +610,6 @@ export default function RegisterForm() {
                     <FormErrorMessage>This is required.</FormErrorMessage>
                   )}
                 </FormControl>
-                <text>
-                  NB: If you want to pay offline or using any other method
-                  please visit any one of our remote registration booth or our LAB
-                  at DL007 campus 15 anytime between 11 am to 7 PM. For any
-                  querry you can reach out to us on iotlab@kiit.ac.in
-                </text>
                 <Stack spacing={10} pt={2}>
                   <Button
                     loadingText="Submitting"
