@@ -28,11 +28,12 @@ export default function Index({sponsorRef}) {
         's19.jpeg',
         'sp20.png',
         'sp10.png',
-        'sp11.jpeg',
+        'sp11.jpg',
         'sp12.png',
         'sp4.png',
         'sp6.jpg',
         'sp14.jpeg',
+        'sp21.jpg',
     ]
 
     return (
