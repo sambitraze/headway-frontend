@@ -69,27 +69,27 @@ export default function RegisterForm() {
       let planDescription = "";
       if (planType === "1") {
         planDescription =
-          "Basic Entry ( Opening & Closing Ceremony + Extra Events ) = ₹99";
+          "Basic Entry ( Opening & Closing Ceremony + Extra Events )";
         if (foodOpted) {
-          planDescription += " + ₹499 (Food) Grand Total = ₹598";
+          planDescription += " + ₹499 (Food)";
         }
       } else if (planType === "2") {
         planDescription =
-          "Basic Entry ( Opening & Closing Ceremony + Extra Events ) & Sub Events = ₹248";
+          "Basic Entry ( Opening & Closing Ceremony + Extra Events ) & Sub Events";
         if (foodOpted) {
-          planDescription += " + ₹499 (Food) Grand Total = ₹747";
+          planDescription += " + ₹499 (Food)";
         }
       } else if (planType === "3") {
         planDescription =
-          "Basic Entry ( Opening & Closing Ceremony + Extra Events ) & Main Event = ₹399";
+          "Basic Entry ( Opening & Closing Ceremony + Extra Events ) & Main Event";
         if (foodOpted) {
-          planDescription += " + ₹499 (Food) Grand Total = ₹899 after discount";
+          planDescription += " + ₹499 (Food)";
         }
       } else if (planType === "4") {
         planDescription =
-          "Basic Entry ( Opening & Closing Ceremony + Extra Events ) & Main Event + Sub Events = ₹549";
+          "Basic Entry ( Opening & Closing Ceremony + Extra Events ) & Main Event + Sub Events";
         if (foodOpted) {
-          planDescription += " + ₹499 (Food) Grand Total = ₹999 after discount";
+          planDescription += " + ₹499 (Food)";
         }
       }
       const data = {
