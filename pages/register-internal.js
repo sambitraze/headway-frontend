@@ -6,8 +6,8 @@ export default function Register() {
     return (
         <div>
             <IndexNav />
-            {/* <Registerationpaused /> */}
-            <RegisterForm2 />
+            <Registerationpaused />
+            {/* <RegisterForm2 /> */}
         </div>
     )
 }
