@@ -30,9 +30,9 @@ export const scheduleData = [
             },
             {
                 timing: 'November 5, 12:15pm - 1:45pm',
-                title: 'Web: CodeHackday',
+                title: 'Web: CodeHackday Day1',
                 type: 'Sub Event',
-                description: 'A hackathon to build a page based on API integration and dynamic/responsive web pages.',
+                description: 'A webinar on a new technology.',
             },
             {
                 timing: 'November 5, 12:15pm - 1:45pm',
@@ -68,7 +68,7 @@ export const scheduleData = [
                 timing: 'November 5, 4:30pm - 6:00pm',
                 title: 'loT: Ard-U-Know - Trivia',
                 type: 'Sub Event',
-                description: 'A quit round of loT-related questions with rewards for correct answers.',
+                description: 'A quiz round of loT-related questions with rewards for correct answers.',
             },
             {
                 timing: 'November 5, 6:00pm - 7:00pm',
@@ -88,9 +88,9 @@ export const scheduleData = [
             },
             {
                 timing: 'November 6, 12:15pm - 1:45pm',
-                title: 'Web: CodeHackday',
+                title: 'Web: CodeHackday Day2',
                 type: 'Sub Event',
-                description: 'A seminar on various languages (CSS, JS, and more). A live project built from scratch.',
+                description: 'Hackathon code submission and judging.',
             },
             {
                 timing: 'November 6, 12:15pm - 1:45pm',
