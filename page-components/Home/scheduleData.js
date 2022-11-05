@@ -93,18 +93,25 @@ export const scheduleData = [
     {
         schedule: [
             {
-                timing: 'November 6, 10:00am - 12:00pm',
+                timing: 'November 6, 09:00am - 10:00am',
+                title: 'Competitive Programming',
+                type: 'Sub Event',
+                description: 'A thrilling online coding competition where participants will battle for the win!',
+                venue: 'Campus 17 Auditorium or Online',
+            },
+            {
+                timing: 'November 6, 10:30am - 12:00pm',
                 title: 'Cyber: Kernal Panic Day2',
                 type: 'Sub Event',
                 description: 'A fun gamified contest of hacking into a system to find hidden items. A short OnA!',
                 venue: 'Campus 17 Auditorium',
             },
             {
-                timing: 'November 6, 12:00pm - 12:30pm',
-                title: 'Web: CodeHackday Day2',
-                type: 'Sub Event',
-                description: 'Hackathon code submission',
-                venue: 'Campus 15 Block A',
+                timing: 'November 5, 12:00pm - 6:00pm',
+                title: 'UpShot Day2',
+                type: 'Main Event',
+                description: 'An interactive and informative session by loT Lab\'s seniors on how to build and deliver an entire project from scratch! Including Conceptualization, Execution, Implementation and Pitching!',
+                venue: 'Campus 17 Auditorium',
             },
             {
                 timing: 'November 6, 12:15pm - 1:45pm',
@@ -114,38 +121,10 @@ export const scheduleData = [
                 venue: 'Campus 15 Block A',
             },
             {
-                timing: 'November 5, 12:45pm - 6:00pm',
-                title: 'UpShot Day2',
-                type: 'Main Event',
-                description: 'An interactive and informative session by loT Lab\'s seniors on how to build and deliver an entire project from scratch! Including Conceptualization, Execution, Implementation and Pitching!',
-                venue: 'Campus 17 Auditorium',
-            },
-            {
-                timing: 'November 6, 2:15pm - 4:15pm',
-                title: 'loT: Ard-U-Know - Hackathon',
-                type: 'Sub Event',
-                description: 'Models from Day 2 will be evaluated. Team limit: 1-3 members',
-                venue: 'Campus 15 Block A',
-            },
-            {
                 timing: 'November 6, 2:15pm - 4:15pm',
                 title: 'Video: Brand Race',
                 type: 'Sub Event',
                 description: 'Two rounds of video-making and presentations where creativity and pitching wit converge! Team limit: 2 members',
-                venue: 'Campus 15 Block A',
-            },
-            {
-                timing: 'November 6, 4:30pm - 6:00pm',
-                title: 'Marketing: Hold Your Thoughts',
-                type: 'Sub Event',
-                description: 'A three round back and forth of pitching,trading nd marketing. Impress the panel and win!',                
-                venue: 'Campus 15 Block A',
-            },
-            {
-                timing: 'November 6, 4:30pm - 6:00pm',
-                title: 'Competitive Programming',
-                type: 'Sub Event',
-                description: 'A thrilling online coding competition where participants will battle for the win!',
                 venue: 'Campus 15 Block A',
             },
             {
